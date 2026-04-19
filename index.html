@@ -14,10 +14,6 @@
             scroll-behavior: smooth;
         }
 
-        .view-transition {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
-        }
-
         .nt-gradient {
             background: linear-gradient(135deg, #d97706 0%, #92400e 100%);
         }
@@ -43,10 +39,10 @@
                     <div class="w-8 h-8 nt-gradient rounded-lg flex items-center justify-center text-white font-bold">NT</div>
                     <span class="text-xl font-bold tracking-tight text-gray-900">Economy<span class="text-amber-600">Portal</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link active-link hover:text-amber-600 font-medium transition py-5">Home</a>
-                    <a href="gas.html" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition py-5">Energy & Gas</a>
-                    <a href="defence.html" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition py-5">Defence</a>
+                <div class="hidden md:flex space-x-8 h-full">
+                    <a href="index.html" class="nav-link active-link hover:text-amber-600 font-medium transition flex items-center px-1">Home</a>
+                    <a href="gas.html" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition flex items-center px-1">Energy & Gas</a>
+                    <a href="defence.html" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition flex items-center px-1">Defence</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
@@ -66,144 +62,200 @@
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <!-- HOME CONTENT -->
-        <div id="view-home" class="view-transition">
-            <!-- Hero Section -->
-            <section class="mb-12">
-                <div class="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-8 md:p-16 shadow-2xl">
-                    <div class="relative z-10 max-w-2xl">
-                        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">NT Economy: Turning the Corner</h1>
-                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">The Territory has consistently outperformed recent fiscal forecasts, maintaining steady growth in a high-inflation environment and heading toward a high-growth phase.</p>
-                        <div class="flex flex-wrap gap-4">
-                            <span class="bg-amber-500/20 border border-amber-500/50 text-amber-400 px-4 py-2 rounded-full text-sm font-semibold">GSP Growth: +1.0%</span>
-                            <span class="bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold">Jobs: +1.9%</span>
-                        </div>
-                    </div>
-                    <!-- Abstract Background Shape -->
-                    <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-amber-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-                    <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-                </div>
-            </section>
-
-            <!-- Key Performance Grid -->
-            <section class="mb-16">
-                <h2 class="text-2xl font-bold mb-8 flex items-center">
-                    <span class="w-2 h-8 bg-amber-600 rounded-full mr-3"></span>
-                    Key Economic Performance
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-hover transition">
-                        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-4">
-                            <i class="fas fa-chart-line text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">GSP Growth</h3>
-                        <p class="text-3xl font-bold text-gray-900 mb-2">1.0% <span class="text-sm font-normal text-emerald-600">+Averting Contraction</span></p>
-                        <p class="text-gray-600 text-sm">Successfully avoided a previously projected 2.6% contraction for 2024-25.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-hover transition">
-                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
-                            <i class="fas fa-users text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Labour Market</h3>
-                        <p class="text-3xl font-bold text-gray-900 mb-2">1.9% <span class="text-sm font-normal text-gray-500">Growth</span></p>
-                        <p class="text-gray-600 text-sm">Approximately 119,886 jobs, exceeding the national growth rate of 1.2% in 2024-25.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-hover transition">
-                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Population</h3>
-                        <p class="text-3xl font-bold text-gray-900 mb-2">+3,527 <span class="text-sm font-normal text-gray-500">People</span></p>
-                        <p class="text-gray-600 text-sm">Grew by 1.2% in 2024-25, driven by a net migration of 1,503 persons.</p>
+        <!-- Hero Section -->
+        <section class="mb-12">
+            <div class="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-8 md:p-16 shadow-2xl">
+                <div class="relative z-10 max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Northern Territory Economic Outlook</h1>
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">The Territory has consistently outperformed recent fiscal forecasts, maintaining steady growth in a high-inflation environment and preparing for a high-growth phase driven by major energy and infrastructure pipelines.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-amber-500/20 border border-amber-500/50 text-amber-400 px-4 py-2 rounded-full text-sm font-semibold">GSP Growth: 1.0%</span>
+                        <span class="bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold">Jobs: +1.9%</span>
                     </div>
                 </div>
-            </section>
+                <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-amber-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+            </div>
+        </section>
 
-            <!-- Housing Section -->
-            <section class="mb-16">
-                <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden flex flex-col md:flex-row">
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <h2 class="text-2xl font-bold mb-6">Housing: Supply & Demand</h2>
-                        <div class="space-y-6">
+        <!-- Key Economic Performance -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <span class="w-2 h-8 bg-amber-600 rounded-full mr-3"></span>
+                Key Economic Performance
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-hover transition">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-4">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">GSP Growth</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">1.0%</p>
+                    <p class="text-gray-600 text-sm">Recorded for 2024-25, successfully avoiding a previously projected 2.6% contraction.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-hover transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Labour Market</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">1.9% <span class="text-sm font-normal text-gray-500">Rise</span></p>
+                    <p class="text-gray-600 text-sm">Employment rose by ~119,886 jobs in 2024-25, exceeding the national growth rate of 1.2%.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-hover transition">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Population</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">1.2% <span class="text-sm font-normal text-gray-500">Growth</span></p>
+                    <p class="text-gray-600 text-sm">Increased by 3,527 people in 2024-25, driven by a net migration of 1,503 persons.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Housing Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <span class="w-2 h-8 bg-amber-600 rounded-full mr-3"></span>
+                Housing
+            </h2>
+            <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-1/2 p-8 md:p-12">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-amber-700 font-semibold mb-2">Darwin’s Tight Rental Market</h4>
+                            <p class="text-gray-600 leading-relaxed">Greater Darwin has faced a persistently tight rental market since 2020, with vacancy rates worsening toward the end of 2025 to <span class="font-bold text-red-600">levels well below 1%</span>. This is in comparison to 2019 when units were almost 9% vacancy rates.</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                            <h4 class="text-emerald-700 font-semibold mb-1">Surge in Approvals</h4>
+                            <p class="text-3xl font-extrabold text-emerald-800">38.1% Rise</p>
+                            <p class="text-emerald-600 text-sm mt-1">New dwelling approvals in the 12 months to January 2026, significantly outpacing the national average of 9.2%.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-slate-50 flex items-center justify-center p-8 md:p-12 border-l border-gray-100">
+                    <div class="w-full max-w-sm">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 text-center">Relative Growth in Dwelling Approvals</h4>
+                        <div class="space-y-8">
                             <div>
-                                <h4 class="text-amber-700 font-semibold mb-2">Darwin’s Tight Rental Market</h4>
-                                <p class="text-gray-600 leading-relaxed">Greater Darwin has faced a persistently tight market since 2020. Vacancy rates worsened toward the end of 2025 to <span class="font-bold text-red-600">levels well below 1%</span>. This is a stark contrast to 2019 when vacancy rates for units were nearly 9%.</p>
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="text-sm font-bold text-gray-700">Northern Territory</span>
+                                    <span class="text-2xl font-black text-emerald-600">+38.1%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
+                                    <div class="bg-emerald-500 h-full rounded-full transition-all duration-1000" style="width: 100%"></div>
+                                </div>
                             </div>
-                            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-                                <h4 class="text-emerald-700 font-semibold mb-1">Surge in Approvals</h4>
-                                <p class="text-3xl font-extrabold text-emerald-800">38.1% Increase</p>
-                                <p class="text-emerald-600 text-sm mt-1">New dwelling approvals in the 12 months to January 2026, significantly outpacing the national average of 9.2%.</p>
+                            <div>
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="text-sm font-bold text-gray-700">National Average</span>
+                                    <span class="text-xl font-bold text-gray-400">+9.2%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
+                                    <div class="bg-gray-400 h-full rounded-full transition-all duration-1000" style="width: 24.1%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Illustrative Data Visualization -->
-                    <div class="md:w-1/2 bg-slate-50 flex items-center justify-center p-8 md:p-12 border-l border-gray-100">
-                        <div class="w-full max-w-sm">
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 text-center">Relative Growth in Dwelling Approvals</h4>
-                            <div class="space-y-8">
-                                <!-- NT Bar -->
-                                <div>
-                                    <div class="flex justify-between items-end mb-2">
-                                        <span class="text-sm font-bold text-gray-700">Northern Territory</span>
-                                        <span class="text-2xl font-black text-emerald-600">+38.1%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
-                                        <div class="bg-emerald-500 h-full rounded-full transition-all duration-1000" style="width: 100%"></div>
-                                    </div>
-                                </div>
-                                <!-- National Bar -->
-                                <div>
-                                    <div class="flex justify-between items-end mb-2">
-                                        <span class="text-sm font-bold text-gray-700">National Average</span>
-                                        <span class="text-xl font-bold text-gray-400">+9.2%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
-                                        <div class="bg-gray-400 h-full rounded-full transition-all duration-1000" style="width: 24.1%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-10 p-4 bg-white rounded-2xl border border-gray-200 shadow-sm text-center">
-                                <p class="text-gray-500 text-sm font-medium">Supply Momentum</p>
-                                <p class="text-xs text-gray-400 mt-1 italic">Building approvals are trending at 4x the national rate to meet critical demand.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Defence and Energy Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <!-- Defence Section -->
+            <section>
+                <h2 class="text-2xl font-bold mb-8 flex items-center">
+                    <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+                    Defence
+                </h2>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm h-full">
+                    <p class="text-gray-700 mb-6 leading-relaxed">Greater Darwin now accommodates <strong>4.1%</strong> of Australia’s total defence workforce. Investment has become a major economic pillar, with a <strong>$2.2 billion</strong> spend in 2021-22 representing 11% of GSP.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-50 rounded flex items-center justify-center text-blue-600 mr-4 shrink-0"><i class="fas fa-hammer"></i></div>
+                            <div>
+                                <p class="font-bold">RAAF Base Tindal Redevelopment</p>
+                                <p class="text-sm text-gray-500">$1.6 billion project providing long-term economic stimulus.</p>
                             </div>
                         </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-50 rounded flex items-center justify-center text-blue-600 mr-4 shrink-0"><i class="fas fa-plane"></i></div>
+                            <div>
+                                <p class="font-bold">RAAF Darwin Aircraft Apron</p>
+                                <p class="text-sm text-gray-500">$380 million in specialized regional infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-100 text-emerald-700 font-semibold">
+                        Local participation rates on Defence projects now reach 80–90%.
                     </div>
                 </div>
             </section>
 
-            <!-- Outlook Section -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-8 text-center">Outlook for the Next 1–3 Years</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-slate-800 text-white p-6 rounded-2xl shadow-xl">
-                        <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-bold">2025-26 GSP</p>
-                        <p class="text-4xl font-bold text-amber-400">5.2%</p>
-                        <p class="text-xs mt-2 text-slate-300">Projected Acceleration</p>
+            <!-- Energy and Gas Section -->
+            <section>
+                <h2 class="text-2xl font-bold mb-8 flex items-center">
+                    <span class="w-2 h-8 bg-amber-700 rounded-full mr-3"></span>
+                    Energy and Gas: Key Milestones
+                </h2>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm h-full">
+                    <p class="text-gray-700 mb-6 leading-relaxed">The energy sector remains the primary driver of the NT’s export-led growth model.</p>
+                    <div class="space-y-6">
+                        <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
+                            <h4 class="font-bold text-amber-900">Barossa Offshore Project</h4>
+                            <p class="text-sm text-amber-700 mt-1">The $6 billion project is winding down construction; production expected to commence January 2026.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900">Beetaloo Sub-Basin</h4>
+                            <p class="text-sm text-slate-600 mt-1">Onshore gas is progressing rapidly, with Tamboran Resources expecting "first gas" in early 2026. The Shenandoah South Pilot and Carpentaria Gas Project reach key milestones.</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-800 text-white p-6 rounded-2xl shadow-xl">
-                        <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-bold">2026-27 GSP</p>
-                        <p class="text-4xl font-bold text-emerald-400">7.1%</p>
-                        <p class="text-xs mt-2 text-slate-300">Primary Export Driver</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                        <p class="text-gray-400 text-sm uppercase tracking-widest mb-2 font-bold">Capital Pipeline</p>
-                        <p class="text-3xl font-bold text-gray-900">$53B+</p>
-                        <p class="text-xs mt-2 text-gray-500">Over 5 years</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                        <p class="text-gray-400 text-sm uppercase tracking-widest mb-2 font-bold">New Roles</p>
-                        <p class="text-3xl font-bold text-gray-900">23,600</p>
-                        <p class="text-xs mt-2 text-gray-500">Construction & Ops</p>
-                    </div>
-                </div>
-                <div class="mt-8 p-6 bg-white rounded-2xl border border-gray-100 text-gray-700">
-                    <p class="flex items-start">
-                        <i class="fas fa-info-circle text-amber-500 mt-1 mr-4"></i>
-                        <span>Population growth is expected to rise by <strong>3,730 people annually</strong>, supported by regional migration programs and relocation incentives.</span>
-                    </p>
                 </div>
             </section>
         </div>
+
+        <!-- Outlook Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <span class="w-2 h-8 bg-slate-900 rounded-full mr-3"></span>
+                Outlook for the Next 1–3 Years
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-800 text-white p-6 rounded-2xl shadow-xl">
+                    <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-bold">2025-26 GSP</p>
+                    <p class="text-4xl font-bold text-amber-400">5.2%</p>
+                    <p class="text-xs mt-2 text-slate-300">Accelerating Growth Phase</p>
+                </div>
+                <div class="bg-slate-800 text-white p-6 rounded-2xl shadow-xl">
+                    <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-bold">2026-27 GSP</p>
+                    <p class="text-4xl font-bold text-emerald-400">7.1%</p>
+                    <p class="text-xs mt-2 text-slate-300">LNG Export Driven Surge</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <p class="text-gray-400 text-sm uppercase tracking-widest mb-2 font-bold">Capital Pipeline</p>
+                    <p class="text-3xl font-bold text-gray-900">$53B+</p>
+                    <p class="text-xs mt-2 text-gray-500">Over 5-year period</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <p class="text-gray-400 text-sm uppercase tracking-widest mb-2 font-bold">New Roles</p>
+                    <p class="text-3xl font-bold text-gray-900">23,600</p>
+                    <p class="text-xs mt-2 text-gray-500">Construction & Operational</p>
+                </div>
+            </div>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-white rounded-2xl border border-gray-100 text-gray-700">
+                    <h4 class="font-bold mb-2 flex items-center text-blue-700">
+                        <i class="fas fa-users-viewfinder mr-2"></i> Population and Labour
+                    </h4>
+                    <p>Growth is expected to rise by <strong>3,730 people annually</strong>, supported by regional migration programs and relocation incentives.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl border border-gray-100 text-gray-700">
+                    <h4 class="font-bold mb-2 flex items-center text-amber-700">
+                        <i class="fas fa-hard-hat mr-2"></i> Infrastructure Pipeline
+                    </h4>
+                    <p>Over $53 billion in capital investment is expected to support <strong>18,000 construction jobs</strong> and <strong>5,600 operational roles</strong>.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-white border-t border-gray-200 py-12 mt-12">
@@ -214,7 +266,7 @@
                     <span class="text-lg font-bold text-gray-900">Economy Portal</span>
                 </div>
                 <div class="text-gray-500 text-sm">
-                    &copy; 2026 Northern Territory Economic Insights. Data based on current fiscal forecasts.
+                    &copy; 2026 Northern Territory Economic Insights. Data based on AEC and Treasury forecasts.
                 </div>
             </div>
         </div>
@@ -222,7 +274,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
             if (btn && menu) {
