@@ -18,18 +18,6 @@
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
         }
 
-        .hidden-view {
-            display: none;
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        .active-view {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .nt-gradient {
             background: linear-gradient(135deg, #d97706 0%, #92400e 100%);
         }
@@ -37,6 +25,11 @@
         .card-hover:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .active-link {
+            color: #d97706; /* amber-600 */
+            border-bottom: 2px solid #d97706;
         }
     </style>
 </head>
@@ -51,9 +44,9 @@
                     <span class="text-xl font-bold tracking-tight text-gray-900">Economy<span class="text-amber-600">Portal</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <button onclick="showView('home')" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition" data-view="home">Home</button>
-                    <button onclick="showView('gas')" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition" data-view="gas">Energy & Gas</button>
-                    <button onclick="showView('defence')" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition" data-view="defence">Defence</button>
+                    <a href="index.html" class="nav-link active-link hover:text-amber-600 font-medium transition py-5">Home</a>
+                    <a href="gas.html" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition py-5">Energy & Gas</a>
+                    <a href="defence.html" class="nav-link text-gray-600 hover:text-amber-600 font-medium transition py-5">Defence</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
@@ -64,17 +57,17 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-2 space-y-2">
-            <button onclick="showView('home')" class="block w-full text-left py-2 text-gray-600 font-medium">Home</button>
-            <button onclick="showView('gas')" class="block w-full text-left py-2 text-gray-600 font-medium">Energy & Gas</button>
-            <button onclick="showView('defence')" class="block w-full text-left py-2 text-gray-600 font-medium">Defence</button>
+            <a href="index.html" class="block w-full text-left py-2 text-amber-600 font-bold">Home</a>
+            <a href="gas.html" class="block w-full text-left py-2 text-gray-600 font-medium">Energy & Gas</a>
+            <a href="defence.html" class="block w-full text-left py-2 text-gray-600 font-medium">Defence</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <!-- VIEW: HOME -->
-        <div id="view-home" class="view-transition active-view">
+        <!-- HOME CONTENT -->
+        <div id="view-home" class="view-transition">
             <!-- Hero Section -->
             <section class="mb-12">
                 <div class="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-8 md:p-16 shadow-2xl">
@@ -211,137 +204,6 @@
                 </div>
             </section>
         </div>
-
-        <!-- VIEW: GAS -->
-        <div id="view-gas" class="view-transition hidden-view">
-            <header class="mb-12">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Energy & Gas: Key Milestones</h1>
-                <p class="text-xl text-gray-600 max-w-3xl">The energy sector remains the primary driver of the Northern Territory’s export-led growth model.</p>
-            </header>
-
-            <div class="space-y-8">
-                <!-- Barossa Project -->
-                <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
-                    <div class="nt-gradient p-8 text-white">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h2 class="text-3xl font-bold">Barossa Offshore Project</h2>
-                                <p class="opacity-90 mt-2 font-medium">Flagship LNG Development</p>
-                            </div>
-                            <div class="bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md">
-                                <p class="text-xs uppercase font-bold">Estimated Cost</p>
-                                <p class="text-xl font-bold">$6 Billion</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <p class="text-gray-700 text-lg leading-relaxed mb-6">The project is winding down its construction phase as it nears completion. It serves as a vital bridge between the construction and production eras of the NT economy.</p>
-                        <div class="flex items-center p-4 bg-amber-50 rounded-xl border border-amber-100">
-                            <i class="fas fa-calendar-check text-amber-600 text-2xl mr-4"></i>
-                            <div>
-                                <p class="font-bold text-amber-900 text-lg">Production Commencement</p>
-                                <p class="text-amber-700">Expected: January 2026</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Beetaloo Project -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                                <i class="fas fa-drill text-xl"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold">Beetaloo Sub-Basin</h2>
-                        </div>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Onshore gas development is progressing rapidly. The region is poised to become a world-class basin providing secure energy for Australia and export markets.</p>
-                        <div class="space-y-4">
-                            <div class="flex items-center text-gray-800">
-                                <i class="fas fa-check-circle text-emerald-500 mr-3"></i>
-                                <span><strong>Tamboran Resources:</strong> Expecting "first gas" in early 2026.</span>
-                            </div>
-                            <div class="flex items-center text-gray-800">
-                                <i class="fas fa-check-circle text-emerald-500 mr-3"></i>
-                                <span><strong>Milestone:</strong> Shenandoah South Pilot appraisal milestones reached.</span>
-                            </div>
-                            <div class="flex items-center text-gray-800">
-                                <i class="fas fa-check-circle text-emerald-500 mr-3"></i>
-                                <span><strong>Carpentaria Project:</strong> Continues to reach exploration targets.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 p-8 rounded-3xl shadow-xl flex items-center justify-center overflow-hidden relative">
-                        <div class="relative z-10 text-center">
-                            <h3 class="text-amber-400 text-xl font-bold mb-4">Export-Led Growth</h3>
-                            <p class="text-slate-300">The transition from construction to operations will drive the projected 7.1% GSP surge in 2026-27.</p>
-                        </div>
-                        <i class="fas fa-gas-pump absolute -bottom-10 -right-10 text-white/5 text-[15rem]"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- VIEW: DEFENCE -->
-        <div id="view-defence" class="view-transition hidden-view">
-            <header class="mb-12">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Defence: An Economic Anchor</h1>
-                <p class="text-xl text-gray-600 max-w-3xl">Strategic investment has transformed Defence into a major pillar of the Territory's economic stability.</p>
-            </header>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
-                    <p class="text-gray-500 font-bold uppercase tracking-tighter text-sm mb-2">Workforce Share</p>
-                    <p class="text-5xl font-extrabold text-blue-600 mb-2">4.1%</p>
-                    <p class="text-gray-600">Of Australia's total defence workforce in Darwin.</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
-                    <p class="text-gray-500 font-bold uppercase tracking-tighter text-sm mb-2">GSP Contribution</p>
-                    <p class="text-5xl font-extrabold text-blue-600 mb-2">11%</p>
-                    <p class="text-gray-600">Represented by $2.2B spend in 2021-22.</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
-                    <p class="text-gray-500 font-bold uppercase tracking-tighter text-sm mb-2">Local Participation</p>
-                    <p class="text-5xl font-extrabold text-emerald-600 mb-2">80-90%</p>
-                    <p class="text-gray-600">Engagement on recent major projects.</p>
-                </div>
-            </div>
-
-            <div class="space-y-8">
-                <!-- Project Spotlight -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                    <div class="md:w-1/3 p-8 bg-slate-700 text-white">
-                        <h3 class="text-xl font-bold mb-4">Major Infrastructure</h3>
-                        <div class="space-y-6">
-                            <div class="border-l-2 border-amber-500 pl-4">
-                                <p class="text-sm text-slate-400">RAAF Base Tindal</p>
-                                <p class="text-lg font-bold">$1.6 Billion</p>
-                            </div>
-                            <div class="border-l-2 border-amber-500 pl-4">
-                                <p class="text-sm text-slate-400">RAAF Darwin Aircraft Apron</p>
-                                <p class="text-lg font-bold">$380 Million</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3 p-8 md:p-12 text-white bg-slate-800">
-                        <h2 class="text-3xl font-bold mb-6">Strategic Economic Stimulus</h2>
-                        <p class="text-slate-300 text-lg leading-relaxed mb-6">Defence investment provides a stable, long-term stimulus that acts as an economic buffer. The focus has shifted toward regional redevelopment and specialized aircraft infrastructure, ensuring the NT remains Australia's most critical strategic gateway.</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-slate-700/50 p-4 rounded-xl">
-                                <i class="fas fa-shield-alt text-amber-500 mb-2"></i>
-                                <p class="font-bold">National Security</p>
-                                <p class="text-sm text-slate-400">Increased footprint of permanent and rotational forces.</p>
-                            </div>
-                            <div class="bg-slate-700/50 p-4 rounded-xl">
-                                <i class="fas fa-hammer text-amber-500 mb-2"></i>
-                                <p class="font-bold">Local Capability</p>
-                                <p class="text-sm text-slate-400">Boosting local business expertise through high participation rates.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer class="bg-white border-t border-gray-200 py-12 mt-12">
@@ -359,50 +221,15 @@
     </footer>
 
     <script>
-        function showView(viewId) {
-            // Hide all views
-            const views = document.querySelectorAll('.view-transition');
-            views.forEach(view => {
-                view.classList.remove('active-view');
-                view.classList.add('hidden-view');
-            });
-
-            // Show target view
-            const targetView = document.getElementById(`view-${viewId}`);
-            if (targetView) {
-                targetView.classList.remove('hidden-view');
-                targetView.classList.add('active-view');
-            }
-
-            // Update nav styles
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.getAttribute('data-view') === viewId) {
-                    link.classList.add('text-amber-600', 'border-b-2', 'border-amber-600');
-                    link.classList.remove('text-gray-600');
-                } else {
-                    link.classList.remove('text-amber-600', 'border-b-2', 'border-amber-600');
-                    link.classList.add('text-gray-600');
-                }
-            });
-
-            // Hide mobile menu after selection
-            document.getElementById('mobile-menu').classList.add('hidden');
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Initialize view
         document.addEventListener('DOMContentLoaded', () => {
-            showView('home');
-            
             // Mobile menu toggle
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 </body>
