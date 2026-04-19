@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top End Military Activity & Investment Impact (2021-2026)</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chosen Palette: Slate (Neutrals), Navy Blue (ADF), Emerald Green (Growth), Rose (Decrease/Risk). -->
+    <!-- Application Structure Plan: 
+         A single-page application focused on the 'Defence Paradox'. 
+         1. Hero/Summary: High-level overview of the $8.5B pipeline vs the 12.5% resident drop.
+         2. Tabbed Interface: 
+            - 'The Human Shift': Contrasting Resident vs. Rotational population with absolute scales.
+            - 'The $8.5B Pipeline': Mapping the infrastructure spend by hub.
+            - 'Strategy & Leakage': Latest news on the NDS 2024 and how much value stays in the NT.
+         Choice: Non-linear exploration to let users jump between demographics and financials.
+    -->
+    <!-- Visualization & Content Choices: 
+         - Personnel Shift (Goal: Compare Categories) -> Grouped Bar Chart (Chart.js) using raw Person counts to show the 'hollowing out'.
+         - Investment Map (Goal: Proportions) -> Doughnut Chart (Chart.js).
+         - Economic Retention (Goal: Comparison) -> Bar Chart showing Total Spend vs. Local Retention.
+         - NO SVG/Mermaid. Icons are Unicode or HTML/CSS styled.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 380px;
+            max-height: 450px;
+        }
+        @media (max-width: 640px) { .chart-container { height: 300px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        .tab-btn.active { border-bottom: 4px solid #1e3a8a; color: #1e3a8a; font-weight: 700; }
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-blue-950 text-white py-8 shadow-md border-b-4 border-emerald-600">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tight">Top End Defence Impact Analysis</h1>
+                    <p class="text-blue-200 mt-1 text-sm uppercase tracking-wider font-medium">Strategic Review 2021 — 2026</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-blue-900/50 px-4 py-2 rounded border border-blue-800 text-center">
+                        <div class="text-xs text-blue-300 uppercase">Est. Pipeline</div>
+                        <div class="text-xl font-bold">$8.5B+</div>
+                    </div>
+                    <div class="bg-rose-900/50 px-4 py-2 rounded border border-rose-800 text-center">
+                        <div class="text-xs text-rose-300 uppercase">Resident ADF</div>
+                        <div class="text-xl font-bold">-12.5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 max-w-6xl py-8">
+
+        <!-- Executive Summary Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-blue-950 mb-4 border-b pb-2 flex items-center gap-2">
+                <span>📝</span> Executive Summary: The Defence Paradox
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <div class="col-span-1 md:col-span-2 space-y-4">
+                    <p class="text-slate-600 leading-relaxed">
+                        The Northern Territory is navigating a profound structural shift in its defence presence. Between 2016 and 2021, while investment began to climb, the **resident ADF population declined by 12.5%** (a loss of approximately 1,170 permanent residents). This has resulted in a "hollowing out" of families who traditionally supported local schools, shops, and real estate.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-semibold bg-emerald-50 p-3 rounded border-l-4 border-emerald-500">
+                        Today, the economy is being propped up by "Capital Surge" (construction) and "Rotational Presence" (transient troops). The 2024 National Defence Strategy (NDS) has accelerated this, pledging billions for northern hardening, but the risk of economic "leakage" to interstate firms remains the primary threat to Territory-wide benefit.
+                    </p>
+                </div>
+                <div class="col-span-1 space-y-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <h4 class="text-xs font-bold text-slate-500 uppercase mb-2">Primary Drivers</h4>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><span>✅</span> US Force Posture Initiative</li>
+                            <li class="flex items-center gap-2"><span>✅</span> NDS 2024 Base Hardening</li>
+                            <li class="flex items-center gap-2"><span>✅</span> RAAF Tindal Expansion</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-rose-50 rounded-lg border border-rose-200">
+                        <h4 class="text-xs font-bold text-rose-500 uppercase mb-2">Major Constraints</h4>
+                        <ul class="text-sm space-y-2 text-rose-700">
+                            <li class="flex items-center gap-2"><span>❌</span> Housing Supply Shortage</li>
+                            <li class="flex items-center gap-2"><span>❌</span> Industrial Capacity Gap</li>
+                            <li class="flex items-center gap-2"><span>❌</span> Skilled Labor Deficit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <div class="flex border-b border-slate-300 mb-8 overflow-x-auto bg-white/50 sticky top-0 z-10">
+            <button class="tab-btn active px-6 py-4 text-base text-slate-600 hover:text-blue-900 whitespace-nowrap focus:outline-none" onclick="openTab('tab-human', this)">
+                👥 The Human Shift (Persons)
+            </button>
+            <button class="tab-btn px-6 py-4 text-base text-slate-600 hover:text-blue-900 whitespace-nowrap focus:outline-none" onclick="openTab('tab-investment', this)">
+                🏗️ Infrastructure Pipeline
+            </button>
+            <button class="tab-btn px-6 py-4 text-base text-slate-600 hover:text-blue-900 whitespace-nowrap focus:outline-none" onclick="openTab('tab-policy', this)">
+                📈 Policy & Value Capture
+            </button>
+        </div>
+
+        <!-- TAB 1: The Human Shift (Now with absolute scale) -->
+        <div id="tab-human" class="tab-content fade-in">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-blue-950 mb-1">Defence Workforce Demographics</h3>
+                    <p class="text-sm text-slate-500 italic">Comparing Permanent Resident Population vs. Transient Workforces (Estimated Persons)</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Chart with clear Y-Axis Scale -->
+                    <div class="lg:col-span-2">
+                        <div class="chart-container">
+                            <canvas id="personsChart"></canvas>
+                        </div>
+                    </div>
+                    <!-- Analysis Summary -->
+                    <div class="flex flex-col gap-4 justify-center">
+                        <div class="p-4 rounded-lg bg-rose-50 border border-rose-100">
+                            <h5 class="text-rose-900 font-bold text-sm mb-1">Resident ADF Decline</h5>
+                            <p class="text-xs text-rose-800 leading-relaxed">
+                                The resident ADF count (permanent postings) has drifted down. This reduces long-term population stability and the "school-age" demographic.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-blue-50 border border-blue-100">
+                            <h5 class="text-blue-900 font-bold text-sm mb-1">US Rotational Surge</h5>
+                            <p class="text-xs text-blue-800 leading-relaxed">
+                                US Forces (MRF-D) peak at 2,500 annually. They inject millions into recreation and retail during the dry season but utilize on-base housing.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-emerald-50 border border-emerald-100">
+                            <h5 class="text-emerald-900 font-bold text-sm mb-1">The Contractor Peak</h5>
+                            <p class="text-xs text-emerald-800 leading-relaxed">
+                                Base construction projects (Tindal/Darwin) currently support thousands of transient workers, putting massive pressure on the rental market.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Infrastructure Pipeline -->
+        <div id="tab-investment" class="tab-content hidden fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-blue-950 mb-4">Investment Hubs (Est. $8.5B Share)</h3>
+                    <div class="chart-container">
+                        <canvas id="hubsChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-lg font-bold mb-4 flex items-center gap-2"><span>🏗️</span> Key Project Status</h4>
+                        <div class="space-y-4">
+                            <div class="border-b border-slate-700 pb-2">
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>RAAF Tindal Upgrades</span>
+                                    <span class="text-emerald-400">In Progress</span>
+                                </div>
+                                <p class="text-xs text-slate-400">Est. $3.8B total across multiple projects including US funded B-52 aprons and fuel depots.</p>
+                            </div>
+                            <div class="border-b border-slate-700 pb-2">
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>HMAS Coonawarra Wharf</span>
+                                    <span class="text-emerald-400">Complete/Commissioning</span>
+                                </div>
+                                <p class="text-xs text-slate-400">New capability for large naval surface combatant support in Darwin.</p>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Robertson Barracks Hardening</span>
+                                    <span class="text-amber-400">Procurement</span>
+                                </div>
+                                <p class="text-xs text-slate-400">Enhancing logistics and training for the US Marine Rotational Force and 1st Brigade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Policy & Value Capture -->
+        <div id="tab-policy" class="tab-content hidden fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-blue-950 mb-4">The "Leaky" Economy</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        The AEC "Over the Horizon" report identifies that nearly **60% of defence construction value flows out of the NT**. Because local firms lack the "Tier 1" scale required for multi-billion dollar contracts, the profits and management wages often return to the East Coast.
+                    </p>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="retentionChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-blue-50 border border-blue-200 rounded-xl">
+                        <h4 class="font-bold text-blue-900 mb-2 flex items-center gap-2"><span>📰</span> Latest News: NDS 2024</h4>
+                        <p class="text-sm text-blue-800 leading-relaxed">
+                            The **2024 National Defence Strategy** reaffirmed the Top End as Australia’s most critical strategic asset. It shifts focus from 'peacetime' utility to 'hardened operations,' meaning investment will pivot toward survivability (underground fuel storage, anti-air defences) rather than just barracks and offices.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-emerald-50 border border-emerald-200 rounded-xl">
+                        <h4 class="font-bold text-emerald-900 mb-2 flex items-center gap-2"><span>🏘️</span> Housing Impact</h4>
+                        <p class="text-sm text-emerald-800 leading-relaxed">
+                            A primary bottleneck. Low vacancy rates in Darwin (< 1.5%) are being exacerbated by the influx of non-resident project staff. To capture more permanent families, the report suggests a renewed focus on 'Liveability' projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-500 py-8 text-center text-xs mt-12">
+        <p>&copy; 2026 NT Economic Data Hub. Source: Darwin Major Business Group / AEC / Treasury.</p>
+    </footer>
+
+    <!-- App Logic -->
+    <script>
+        const appData = {
+            personnel: {
+                labels: ['2016', '2019', '2021', '2024', '2026 (Est)'],
+                datasets: [
+                    {
+                        label: 'Resident ADF (Permanent)',
+                        data: [9360, 8900, 8190, 8250, 8350], // Reflecting the 12.5% drop between 16-21
+                        backgroundColor: '#e11d48', // rose-600
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'US Rotational Forces (Max)',
+                        data: [1250, 2000, 2500, 2500, 2500],
+                        backgroundColor: '#1e3a8a', // blue-900
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Construction/Project Staff',
+                        data: [1100, 1400, 2200, 4100, 3200], // Peak construction in 2024
+                        backgroundColor: '#059669', // emerald-600
+                        borderRadius: 4
+                    }
+                ]
+            },
+            hubs: {
+                labels: ['RAAF Tindal', 'RAAF Darwin', 'Larrakeyah/Naval', 'Robertson Barracks', 'Other/Training'],
+                data: [42, 18, 14, 12, 14],
+                colors: ['#1e3a8a', '#3b82f6', '#059669', '#10b981', '#f59e0b']
+            },
+            retention: {
+                labels: ['Local NT Spend', 'Interstate Leakage'],
+                data: [41.8, 58.2]
+            }
+        };
+
+        let activeCharts = {};
+
+        function openTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.remove('hidden');
+            btn.classList.add('active');
+
+            if (tabId === 'tab-human' && !activeCharts.persons) initPersonsChart();
+            if (tabId === 'tab-investment' && !activeCharts.hubs) initHubsChart();
+            if (tabId === 'tab-policy' && !activeCharts.retention) initRetentionChart();
+        }
+
+        const chartDefaults = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } }
+        };
+
+        function initPersonsChart() {
+            const ctx = document.getElementById('personsChart').getContext('2d');
+            activeCharts.persons = new Chart(ctx, {
+                type: 'bar',
+                data: appData.personnel,
+                options: {
+                    ...chartDefaults,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Total Personnel (Persons)', font: { weight: 'bold' } },
+                            ticks: { stepSize: 2000 }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initHubsChart() {
+            const ctx = document.getElementById('hubsChart').getContext('2d');
+            activeCharts.hubs = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: appData.hubs.labels,
+                    datasets: [{
+                        data: appData.hubs.data,
+                        backgroundColor: appData.hubs.colors,
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    ...chartDefaults,
+                    cutout: '65%',
+                    plugins: {
+                        ...chartDefaults.plugins,
+                        tooltip: {
+                            callbacks: {
+                                label: (item) => ` ${item.label}: ${item.raw}% of Pipeline`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initRetentionChart() {
+            const ctx = document.getElementById('retentionChart').getContext('2d');
+            activeCharts.retention = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: appData.retention.labels,
+                    datasets: [{
+                        data: appData.retention.data,
+                        backgroundColor: ['#059669', '#cbd5e1'],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    ...chartDefaults,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { max: 100, ticks: { callback: (v) => v + '%' } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        window.onload = initPersonsChart;
+    </script>
+</body>
+</html>
