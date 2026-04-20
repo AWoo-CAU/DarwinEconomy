@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NT Gas: Strategic Project Timeline</title>
+    <title>The NT Gas Transformation</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,15 +32,15 @@
     <style>
         /* <!-- Chosen Palette: Sophisticated Stone & Sky (Neutrals with Deep Blue/Orange) -->
         <!-- Application Structure Plan: 
-             1. REVISED Navigation: Placed 'Home' and 'Defence' at the forefront of the nav bar, ensuring visibility on mobile and desktop.
-             2. Executive Overview: Contextualizes the 5-year shift from investment to production.
-             3. Strategic Sequence Timeline: A high-level visual showing the "baton pass" from INPEX to Barossa to Beetaloo to Middle Arm.
-             4. Interactive Asset Explorer: Toggles between major assets to show specific project trajectories.
-             5. Transition Dashboard: Features a Grouped Bar Chart to visualize the "Handover" from Private Investment to Export Revenue. -->
+             1. Navigation: Persistent links to Home and Defence, plus internal section anchors.
+             2. Executive Overview: Highlights the 'NT Gas Transformation' and the transition between workforce periods.
+             3. Strategic Sequence Timeline: Updated descriptions for INPEX, Barossa, and Beetaloo (including the 2030+ horizon).
+             4. Interactive Asset Explorer: Detail view for the major projects with updated narratives.
+             5. Transition Dashboard: Quantitative data showing the economic handover from investment to exports. -->
         /* <!-- Visualization & Content Choices: 
-             - Strategic Timeline -> CSS Connected Nodes -> Shows the sequential nature and overlap of major projects.
-             - Economic Shift -> Grouped Bar Chart -> Illustrates the structural change in GSP drivers (Investment vs Exports).
-             - GSP Growth -> Line Chart -> Visualizes the 'hockey stick' growth projection. -->
+             - Strategic Timeline -> CSS Connected Nodes -> Shows the sequential nature of projects.
+             - Economic Shift -> Grouped Bar Chart -> Illustrates the change in GSP drivers.
+             - GSP Growth -> Line Chart -> Shows projected growth velocity. -->
         /* <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --> */
 
         body {
@@ -77,23 +77,20 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header (Fixed Visibility for Home and Defence) -->
+    <!-- Header -->
     <nav class="sticky top-0 z-50 bg-white border-b border-stone-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center py-3 md:h-16">
-                <!-- Logo -->
                 <div class="font-black text-xl tracking-tighter text-brand-dark flex items-center mb-2 md:mb-0">
-                    <span class="bg-brand-highlight text-white px-2 py-0.5 rounded mr-2 tracking-normal">NT</span> GAS ECONOMY
+                    <span class="bg-brand-highlight text-white px-2 py-0.5 rounded mr-2 tracking-normal text-lg">NT</span> GAS ECONOMY
                 </div>
                 
-                <!-- Primary Navigation -->
                 <div class="flex items-center space-x-4 md:space-x-8 text-sm font-bold">
                     <div class="flex items-center space-x-4 border-r border-stone-200 pr-4 md:pr-8">
                         <a href="index.html" class="text-brand-highlight hover:opacity-80 transition-opacity">Home</a>
                         <a href="defence.html" class="text-stone-600 hover:text-brand-highlight transition-colors">Defence</a>
                     </div>
                     
-                    <!-- Section Anchors -->
                     <div class="hidden sm:flex items-center space-x-4 text-stone-500 font-semibold text-xs uppercase tracking-widest">
                         <a href="#timeline" class="hover:text-brand-dark transition-colors">Timeline</a>
                         <a href="#assets" class="hover:text-brand-dark transition-colors">Assets</a>
@@ -104,27 +101,27 @@
         </div>
     </nav>
 
-    <!-- Hero / Summary -->
-    <section id="summary" class="pt-16 pb-12 md:pt-24 md:pb-16 px-4 bg-gradient-to-b from-stone-100 to-brand-light text-center md:text-left">
+    <!-- Hero Section -->
+    <section id="summary" class="pt-16 pb-12 md:pt-24 md:pb-16 px-4 bg-gradient-to-b from-stone-100 to-brand-light text-center md:text-left border-b border-stone-200">
         <div class="max-w-5xl mx-auto">
             <div class="inline-block bg-brand-accent/10 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-                Northern Territory Outlook
+                Economic Evolution
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold text-stone-900 leading-tight mb-6">
-                The Decade of <span class="text-brand-highlight">Gas Delivery.</span>
+                The <span class="text-brand-highlight">NT Gas Transformation</span>
             </h1>
-            <p class="text-lg md:text-xl text-stone-600 leading-relaxed max-w-3xl">
-                The Northern Territory is shifting from a construction-led "Investment phase" to a high-margin "Export phase." Over the next five years, the transition from offshore builds to onshore commercialization will drive a historic <strong>7.1% GSP growth spike.</strong>
+            <p class="text-lg md:text-xl text-stone-600 leading-relaxed max-w-4xl">
+                The Northern Territory has shifted from construction-led high workforce activity through to export phase and is on the precipice of another high workforce construction-led period.
             </p>
         </div>
     </section>
 
     <!-- Strategic Sequence Timeline -->
-    <section id="timeline" class="py-16 bg-white overflow-hidden">
+    <section id="timeline" class="py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-12">
-                <h2 class="text-3xl font-bold mb-2">The Strategic Sequence</h2>
-                <p class="text-stone-500">How major projects handover the economic baton over a 10-year horizon.</p>
+                <h2 class="text-3xl font-bold mb-2 text-brand-dark">The Strategic Sequence</h2>
+                <p class="text-stone-500">Visualizing the shift from established export infrastructure to the next wave of developments.</p>
             </div>
 
             <div class="relative py-10">
@@ -136,7 +133,7 @@
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">INPEX Ichthys</h4>
                             <span class="text-xs font-bold text-brand-accent bg-brand-accent/10 px-2 py-0.5 rounded">2018-Ongoing</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">The "Operational Anchor" providing the export baseline and steady revenue.</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4">Transitioned from construction phase to steady export delivering 10% of Japan's gas supply</p>
                         </div>
                     </div>
 
@@ -145,7 +142,7 @@
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">Santos Barossa</h4>
                             <span class="text-xs font-bold text-brand-highlight bg-brand-highlight/10 px-2 py-0.5 rounded">2021-2026</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">The "Production Surge" project nearing completion to boost export volumes.</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4">Construction phase completing with first exports in early 2026</p>
                         </div>
                     </div>
 
@@ -153,8 +150,8 @@
                         <div class="mb-4 bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg shadow-xl z-10 transition-transform group-hover:scale-110">3</div>
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">Beetaloo Basin</h4>
-                            <span class="text-xs font-bold text-brand-accent bg-brand-accent/10 px-2 py-0.5 rounded">2023-2028+</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">The "Onshore Frontier" moving from appraisal to commercial gas flows.</p>
+                            <span class="text-xs font-bold text-brand-accent bg-brand-accent/10 px-2 py-0.5 rounded">2023-2030+</span>
+                            <p class="mt-2 text-xs text-stone-500 px-4">Large onshore shale gas basin moving to high construction-led developments</p>
                         </div>
                     </div>
 
@@ -163,61 +160,58 @@
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">Middle Arm</h4>
                             <span class="text-xs font-bold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded">2025-2030+</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">The "Value Hub" where gas is converted into manufacturing & hydrogen.</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4">The ultimate value-capture precinct for manufacturing, minerals, and hydrogen.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-8 p-6 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-stone-600">
-                <p><strong>Strategic Context:</strong> These projects are not isolated. The <strong>Timeline</strong> shows a deliberate handover: INPEX created the workforce, Barossa sustains the current investment cycle, Beetaloo secures the next generation of supply, and Middle Arm ensures gas activity creates a permanent industrial legacy.</p>
             </div>
         </div>
     </section>
 
     <!-- Asset Profiles -->
-    <section id="assets" class="py-16 bg-brand-light border-y border-stone-200">
+    <section id="assets" class="py-16 bg-stone-100 border-y border-stone-200">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-10">
-                <h2 class="text-3xl font-bold mb-2">Deep Dive: Project Profiles</h2>
-                <p class="text-stone-500">Interact with the assets to see specific milestones and economic contributions.</p>
+                <h2 class="text-3xl font-bold mb-2 text-brand-dark">Project Deep Dive</h2>
+                <p class="text-stone-500">Explore the specific economic narratives and trajectories of the Territory's primary gas assets.</p>
             </div>
 
             <div class="flex flex-wrap gap-2 mb-8">
-                <button onclick="showAsset('barossa')" id="btn-barossa" class="asset-btn tab-active px-6 py-2.5 rounded-full font-bold transition-all border border-stone-200">Santos Barossa</button>
-                <button onclick="showAsset('beetaloo')" id="btn-beetaloo" class="asset-btn px-6 py-2.5 rounded-full font-bold text-stone-600 hover:bg-stone-100 transition-all border border-stone-200">Beetaloo Basin</button>
-                <button onclick="showAsset('inpex')" id="btn-inpex" class="asset-btn px-6 py-2.5 rounded-full font-bold text-stone-600 hover:bg-stone-100 transition-all border border-stone-200">INPEX Ichthys</button>
+                <button onclick="showAsset('inpex')" id="btn-inpex" class="asset-btn tab-active px-6 py-2.5 rounded-full font-bold transition-all border border-stone-200">INPEX Ichthys</button>
+                <button onclick="showAsset('barossa')" id="btn-barossa" class="asset-btn px-6 py-2.5 rounded-full font-bold text-stone-600 hover:bg-stone-200 transition-all border border-stone-200">Santos Barossa</button>
+                <button onclick="showAsset('beetaloo')" id="btn-beetaloo" class="asset-btn px-6 py-2.5 rounded-full font-bold text-stone-600 hover:bg-stone-200 transition-all border border-stone-200">Beetaloo Basin</button>
             </div>
 
             <div id="asset-display" class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm min-h-[300px]">
                 <div id="asset-content" class="animate-fade">
+                    <!-- Default Content: INPEX -->
                     <div class="grid md:grid-cols-2 gap-12 items-start">
                         <div>
-                            <h3 class="text-2xl font-bold mb-4">Santos Barossa: The "Handover" Project</h3>
+                            <h3 class="text-2xl font-bold mb-4">INPEX Ichthys: The Global Supplier</h3>
                             <p class="text-stone-600 mb-6 leading-relaxed">
-                                Barossa is the bridge between the 2010s construction boom and the 2026 export peak. It is currently replacing the declining supply from older fields, ensuring the Darwin LNG plant remains a global energy hub.
+                                Having transitioned from a massive multi-year construction phase, INPEX is now in steady-state operation. It serves as the cornerstone of the NT's export economy, currently delivering approximately 10% of Japan's total gas supply.
                             </p>
                             <div class="flex items-center gap-4">
                                 <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1">
-                                    <span class="block text-xs font-bold text-stone-400 uppercase">Current Status</span>
-                                    <span class="text-lg font-bold text-brand-accent">Pre-Production</span>
+                                    <span class="block text-xs font-bold text-stone-400 uppercase">Phase</span>
+                                    <span class="text-lg font-bold text-brand-accent">Steady Export</span>
                                 </div>
                                 <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1">
-                                    <span class="block text-xs font-bold text-stone-400 uppercase">Est. Completion</span>
-                                    <span class="text-lg font-bold text-brand-highlight">Jan 2026</span>
+                                    <span class="block text-xs font-bold text-stone-400 uppercase">Energy Security</span>
+                                    <span class="text-lg font-bold text-brand-highlight">10% Japan Supply</span>
                                 </div>
                             </div>
                         </div>
                         <div class="space-y-4">
-                            <h4 class="font-bold text-sm uppercase tracking-wider text-stone-400">Milestone Tracker</h4>
+                            <h4 class="font-bold text-sm uppercase tracking-wider text-stone-400">Strategic Evolution</h4>
                             <div class="border-l-2 border-brand-accent pl-4 py-1">
-                                <p class="font-bold">2024: PIPELAYING & FPSO DEPLOYMENT</p>
+                                <p class="font-bold">2012-2018: HISTORIC CONSTRUCTION ERA</p>
                             </div>
                             <div class="border-l-2 border-stone-200 pl-4 py-1">
-                                <p class="text-stone-500">2025: INTEGRATION & COMMISSIONING</p>
+                                <p class="text-stone-500">2018-PRESENT: OPERATIONAL OPTIMIZATION</p>
                             </div>
                             <div class="border-l-2 border-brand-highlight pl-4 py-1">
-                                <p class="font-bold text-brand-highlight">2026: FIRST GAS & EXPORT RAMP-UP</p>
+                                <p class="font-bold text-brand-highlight">FUTURE: CARBON CAPTURE (CCS) ADOPTION</p>
                             </div>
                         </div>
                     </div>
@@ -226,26 +220,26 @@
         </div>
     </section>
 
-    <!-- Data Dashboard -->
-    <section id="data" class="py-16 bg-white">
+    <!-- Transition Dashboard -->
+    <section id="data" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold mb-4 uppercase tracking-tighter">The Transition Dashboard</h2>
-                <p class="text-stone-600 max-w-2xl mx-auto italic">Visualizing the structural "handover" of the NT Economy.</p>
+                <h2 class="text-4xl font-extrabold mb-4 uppercase tracking-tighter text-brand-dark">Economic Transition Dashboard</h2>
+                <p class="text-stone-600 max-w-2xl mx-auto italic">Measuring the shift from asset creation to export delivery.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
-                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex flex-col">
-                    <h3 class="text-xl font-bold mb-2">Economic Driver Transition</h3>
-                    <p class="text-sm text-stone-500 mb-6">Investment vs. Net Export Contribution to GSP.</p>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold mb-2">Driver Handover</h3>
+                    <p class="text-sm text-stone-500 mb-6">Contrasting Capital Investment (GFCF) and Net Export contributions.</p>
                     <div class="chart-container flex-grow">
                         <canvas id="transitionChart"></canvas>
                     </div>
                 </div>
 
-                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex flex-col">
-                    <h3 class="text-xl font-bold mb-2">GSP Growth Velocity</h3>
-                    <p class="text-sm text-stone-500 mb-6">Annual percentage change in NT Gross State Product.</p>
+                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold mb-2">Growth Velocity (GSP)</h3>
+                    <p class="text-sm text-stone-500 mb-6">Forecasted annual percentage change in Territory GSP.</p>
                     <div class="chart-container flex-grow">
                         <canvas id="growthChart"></canvas>
                     </div>
@@ -254,35 +248,35 @@
         </div>
     </section>
 
-    <footer class="py-12 bg-stone-900 text-stone-500 text-center text-sm">
+    <footer class="py-12 bg-stone-900 text-stone-500 text-center text-sm border-t border-stone-800">
         <div class="max-w-7xl mx-auto px-4">
-            <p>NT Economy Information Architect &copy; 2026</p>
-            <p class="mt-1 text-xs text-stone-700">Based on AEC "Over the Horizon" & NT Treasury Reports</p>
+            <p>NT Economy Information Architect &bull; Gas Transformation Analysis &bull; &copy; 2026</p>
+            <p class="mt-2 text-xs text-stone-700 uppercase tracking-widest font-bold">Data sourced from AEC Group and NT Treasury Forecasts</p>
         </div>
     </footer>
 
     <script>
         const projectData = {
+            inpex: {
+                title: "INPEX Ichthys: The Global Supplier",
+                desc: "Having transitioned from a massive multi-year construction phase, INPEX is now in steady-state operation. It serves as the cornerstone of the NT's export economy, currently delivering approximately 10% of Japan's total gas supply.",
+                status: "Steady Export",
+                milestone: "10% Japan Supply",
+                bullets: ["2012-2018: HISTORIC CONSTRUCTION ERA", "2018-PRESENT: OPERATIONAL OPTIMIZATION", "FUTURE: CARBON CAPTURE (CCS) ADOPTION"]
+            },
             barossa: {
-                title: "Santos Barossa: The 'Handover' Project",
-                desc: "Barossa is the bridge between the 2010s construction boom and the 2026 export peak. It is currently replacing the declining supply from older fields, ensuring the Darwin LNG plant remains a global energy hub.",
-                status: "Pre-Production",
-                investment: "Jan 2026",
-                milestones: ["2024: PIPELAYING & FPSO DEPLOYMENT", "2025: INTEGRATION & COMMISSIONING", "2026: FIRST GAS & EXPORT RAMP-UP"]
+                title: "Santos Barossa: The Next Export Wave",
+                desc: "The construction phase of the Barossa offshore project is currently completing. As activity shifts from infrastructure build to resource harvest, the project is on track for its first exports in early 2026.",
+                status: "Completing Construction",
+                milestone: "First Gas early 2026",
+                bullets: ["2024: PIPELAYING & FPSO PEAK", "2025: INTEGRATION & PRE-COMMISSIONING", "2026: FIRST LNG CARGO EXPORT"]
             },
             beetaloo: {
-                title: "Beetaloo Sub-Basin: The Onshore Future",
-                desc: "Beetaloo represents the next generation of NT gas. By moving appraisal drilling onshore, the Territory creates more regional jobs and long-term domestic energy security.",
-                status: "Appraisal Phase",
-                investment: "2026 Pilot",
-                milestones: ["2023-24: FLOW TESTING SUCCESS", "2025: BEETALOO AUTHORITY SETUP", "2026: PILOT PRODUCTION"]
-            },
-            inpex: {
-                title: "INPEX Ichthys: The Operational Anchor",
-                desc: "INPEX is the foundation. While others are building, INPEX is producing. Focus is now on maintaining massive export volumes while introducing Carbon Capture (CCS).",
-                status: "Operational",
-                investment: "Steady State",
-                milestones: ["2021-23: OPTIMIZATION PEAKS", "2024-25: CCS TASKFORCE INITIATION", "2026+: EXPANSION PLANNING"]
+                title: "Beetaloo Basin: The Onshore Engine",
+                desc: "Beetaloo is a large onshore shale gas basin currently moving toward high construction-led developments. This basin is set to trigger a new cycle of workforce intensity and local investment through the 2030s.",
+                status: "High Construction Wave",
+                milestone: "Scaling 2030+",
+                bullets: ["2023-25: APPRAISAL FLOW TESTING", "2026: PILOT PRODUCTION COMMENCEMENT", "2030+: LARGE SCALE FIELD DEVELOPMENT"]
             }
         };
 
@@ -291,14 +285,43 @@
             const container = document.getElementById('asset-display');
             document.querySelectorAll('.asset-btn').forEach(btn => {
                 btn.classList.remove('tab-active');
-                btn.classList.add('text-stone-600', 'hover:bg-stone-100');
+                btn.classList.add('text-stone-600', 'hover:bg-stone-200');
             });
             document.getElementById('btn-' + assetKey).classList.add('tab-active');
+            document.getElementById('btn-' + assetKey).classList.remove('text-stone-600', 'hover:bg-stone-200');
+            
             document.getElementById('asset-content').remove();
             const content = document.createElement('div');
             content.id = 'asset-content';
             content.className = 'animate-fade grid md:grid-cols-2 gap-12 items-start';
-            content.innerHTML = `<div><h3 class="text-2xl font-bold mb-4">${data.title}</h3><p class="text-stone-600 mb-6 leading-relaxed">${data.desc}</p><div class="flex items-center gap-4"><div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1"><span class="block text-xs font-bold text-stone-400 uppercase">Current Status</span><span class="text-lg font-bold text-brand-accent">${data.status}</span></div><div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1"><span class="block text-xs font-bold text-stone-400 uppercase">Key Milestone</span><span class="text-lg font-bold text-brand-highlight">${data.investment}</span></div></div></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-wider text-stone-400">Milestone Tracker</h4><div class="border-l-2 border-stone-200 pl-4 py-1"><p class="text-stone-500">${data.milestones[0]}</p></div><div class="border-l-2 border-stone-200 pl-4 py-1"><p class="text-stone-500">${data.milestones[1]}</p></div><div class="border-l-2 border-brand-highlight pl-4 py-1"><p class="font-bold text-brand-highlight">${data.milestones[2]}</p></div></div>`;
+            content.innerHTML = `
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">${data.title}</h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed">${data.desc}</p>
+                    <div class="flex items-center gap-4">
+                        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1">
+                            <span class="block text-xs font-bold text-stone-400 uppercase">Phase</span>
+                            <span class="text-lg font-bold text-brand-accent">${data.status}</span>
+                        </div>
+                        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1">
+                            <span class="block text-xs font-bold text-stone-400 uppercase">Target</span>
+                            <span class="text-lg font-bold text-brand-highlight">${data.milestone}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-stone-400">Strategic Evolution</h4>
+                    <div class="border-l-2 border-brand-accent pl-4 py-1">
+                        <p class="font-bold">${data.bullets[0]}</p>
+                    </div>
+                    <div class="border-l-2 border-stone-200 pl-4 py-1">
+                        <p class="text-stone-500">${data.bullets[1]}</p>
+                    </div>
+                    <div class="border-l-2 border-brand-highlight pl-4 py-1">
+                        <p class="font-bold text-brand-highlight">${data.bullets[2]}</p>
+                    </div>
+                </div>
+            `;
             container.appendChild(content);
         }
 
@@ -307,10 +330,10 @@
             new Chart(document.getElementById('transitionChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Construction Peak (2023)', 'Production Era (2026 F)'],
+                    labels: ['Construction Phase (Build)', 'Production Phase (Produce)'],
                     datasets: [
-                        { label: 'Private Investment', data: [9.2, 4.1], backgroundColor: '#78716c', borderRadius: 6 },
-                        { label: 'Export Contribution', data: [5.8, 14.5], backgroundColor: '#f97316', borderRadius: 6 }
+                        { label: 'Private Investment', data: [9.1, 4.2], backgroundColor: '#78716c', borderRadius: 6 },
+                        { label: 'Net Export Contribution', data: [5.8, 14.8], backgroundColor: '#f97316', borderRadius: 6 }
                     ]
                 },
                 options: {
@@ -326,8 +349,8 @@
                 data: {
                     labels: ['2023', '2024', '2025', '2026', '2027'],
                     datasets: [{
-                        label: 'GSP Change (%)',
-                        data: [-0.8, 1.0, 2.0, 5.2, 7.1],
+                        label: 'GSP Growth (%)',
+                        data: [-0.6, 1.0, 2.0, 5.2, 7.1],
                         borderColor: '#0369a1',
                         backgroundColor: 'rgba(3, 105, 161, 0.1)',
                         fill: true,
