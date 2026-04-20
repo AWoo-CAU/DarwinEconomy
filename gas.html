@@ -6,7 +6,6 @@
     <title>The NT Gas Transformation</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
         tailwind.config = {
@@ -32,30 +31,18 @@
     <style>
         /* <!-- Chosen Palette: Sophisticated Stone & Sky (Neutrals with Deep Blue/Orange) -->
         <!-- Application Structure Plan: 
-             1. Navigation: Persistent links to Home and Defence, plus internal section anchors.
-             2. Executive Overview: Highlights the 'NT Gas Transformation' and the transition between workforce periods.
-             3. Strategic Sequence Timeline: Updated descriptions for INPEX, Barossa, and Beetaloo (including the 2030+ horizon).
-             4. Interactive Asset Explorer: Detail view for the major projects with updated narratives.
-             5. Transition Dashboard: Quantitative data showing the economic handover from investment to exports. -->
+             1. Navigation: Persistent links to Home and Defence, plus section anchors for this page.
+             2. Executive Overview: Centered Hero section highlighting the transition between workforce periods.
+             3. Strategic Sequence Timeline: Visualizes the chronological handover from operational anchors to future growth hubs.
+             4. Key Gas Projects: Focused interactive view for major assets with updated narratives. -->
         /* <!-- Visualization & Content Choices: 
              - Strategic Timeline -> CSS Connected Nodes -> Shows the sequential nature of projects.
-             - Economic Shift -> Grouped Bar Chart -> Illustrates the change in GSP drivers.
-             - GSP Growth -> Line Chart -> Shows projected growth velocity. -->
+             - Asset Profiles -> Tabbed Interface -> Provides specific project narratives (No charts used). -->
         /* <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --> */
 
         body {
             background-color: #fafaf9;
             color: #1c1917;
-        }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 45vh;
-            max-height: 400px;
         }
         
         .tab-active {
@@ -94,15 +81,14 @@
                     <div class="hidden sm:flex items-center space-x-4 text-stone-500 font-semibold text-xs uppercase tracking-widest">
                         <a href="#timeline" class="hover:text-brand-dark transition-colors">Timeline</a>
                         <a href="#assets" class="hover:text-brand-dark transition-colors">Assets</a>
-                        <a href="#data" class="hover:text-brand-dark transition-colors">Data</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="summary" class="pt-16 pb-12 md:pt-24 md:pb-16 px-4 bg-gradient-to-b from-stone-100 to-brand-light text-center md:text-left border-b border-stone-200">
+    <!-- Hero Section (Center Justified) -->
+    <section id="summary" class="pt-16 pb-12 md:pt-24 md:pb-20 px-4 bg-gradient-to-b from-stone-100 to-brand-light text-center border-b border-stone-200">
         <div class="max-w-5xl mx-auto">
             <div class="inline-block bg-brand-accent/10 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
                 Economic Evolution
@@ -110,7 +96,7 @@
             <h1 class="text-4xl md:text-6xl font-extrabold text-stone-900 leading-tight mb-6">
                 The <span class="text-brand-highlight">NT Gas Transformation</span>
             </h1>
-            <p class="text-lg md:text-xl text-stone-600 leading-relaxed max-w-4xl">
+            <p class="text-lg md:text-xl text-stone-600 leading-relaxed max-w-4xl mx-auto">
                 The Northern Territory has shifted from construction-led high workforce activity through to export phase and is on the precipice of another high workforce construction-led period.
             </p>
         </div>
@@ -119,7 +105,7 @@
     <!-- Strategic Sequence Timeline -->
     <section id="timeline" class="py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="mb-12">
+            <div class="mb-12 text-center md:text-left">
                 <h2 class="text-3xl font-bold mb-2 text-brand-dark">The Strategic Sequence</h2>
                 <p class="text-stone-500">Visualizing the shift from established export infrastructure to the next wave of developments.</p>
             </div>
@@ -168,15 +154,15 @@
         </div>
     </section>
 
-    <!-- Asset Profiles -->
+    <!-- Key Gas Projects (Formerly Project Deep Dive) -->
     <section id="assets" class="py-16 bg-stone-100 border-y border-stone-200">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="mb-10">
-                <h2 class="text-3xl font-bold mb-2 text-brand-dark">Project Deep Dive</h2>
+            <div class="mb-10 text-center md:text-left">
+                <h2 class="text-3xl font-bold mb-2 text-brand-dark">Key Gas Projects</h2>
                 <p class="text-stone-500">Explore the specific economic narratives and trajectories of the Territory's primary gas assets.</p>
             </div>
 
-            <div class="flex flex-wrap gap-2 mb-8">
+            <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
                 <button onclick="showAsset('inpex')" id="btn-inpex" class="asset-btn tab-active px-6 py-2.5 rounded-full font-bold transition-all border border-stone-200">INPEX Ichthys</button>
                 <button onclick="showAsset('barossa')" id="btn-barossa" class="asset-btn px-6 py-2.5 rounded-full font-bold text-stone-600 hover:bg-stone-200 transition-all border border-stone-200">Santos Barossa</button>
                 <button onclick="showAsset('beetaloo')" id="btn-beetaloo" class="asset-btn px-6 py-2.5 rounded-full font-bold text-stone-600 hover:bg-stone-200 transition-all border border-stone-200">Beetaloo Basin</button>
@@ -220,34 +206,7 @@
         </div>
     </section>
 
-    <!-- Transition Dashboard -->
-    <section id="data" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold mb-4 uppercase tracking-tighter text-brand-dark">Economic Transition Dashboard</h2>
-                <p class="text-stone-600 max-w-2xl mx-auto italic">Measuring the shift from asset creation to export delivery.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex flex-col shadow-sm">
-                    <h3 class="text-xl font-bold mb-2">Driver Handover</h3>
-                    <p class="text-sm text-stone-500 mb-6">Contrasting Capital Investment (GFCF) and Net Export contributions.</p>
-                    <div class="chart-container flex-grow">
-                        <canvas id="transitionChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex flex-col shadow-sm">
-                    <h3 class="text-xl font-bold mb-2">Growth Velocity (GSP)</h3>
-                    <p class="text-sm text-stone-500 mb-6">Forecasted annual percentage change in Territory GSP.</p>
-                    <div class="chart-container flex-grow">
-                        <canvas id="growthChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer class="py-12 bg-stone-900 text-stone-500 text-center text-sm border-t border-stone-800">
         <div class="max-w-7xl mx-auto px-4">
             <p>NT Economy Information Architect &bull; Gas Transformation Analysis &bull; &copy; 2026</p>
@@ -324,50 +283,6 @@
             `;
             container.appendChild(content);
         }
-
-        window.onload = function() {
-            const chartDefaults = { font: { family: 'Inter', size: 12 }, color: '#78716c' };
-            new Chart(document.getElementById('transitionChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Construction Phase (Build)', 'Production Phase (Produce)'],
-                    datasets: [
-                        { label: 'Private Investment', data: [9.1, 4.2], backgroundColor: '#78716c', borderRadius: 6 },
-                        { label: 'Net Export Contribution', data: [5.8, 14.8], backgroundColor: '#f97316', borderRadius: 6 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: chartDefaults } },
-                    scales: { y: { beginAtZero: true, grid: { color: '#f5f5f4' } }, x: { grid: { display: false } } }
-                }
-            });
-
-            new Chart(document.getElementById('growthChart'), {
-                type: 'line',
-                data: {
-                    labels: ['2023', '2024', '2025', '2026', '2027'],
-                    datasets: [{
-                        label: 'GSP Growth (%)',
-                        data: [-0.6, 1.0, 2.0, 5.2, 7.1],
-                        borderColor: '#0369a1',
-                        backgroundColor: 'rgba(3, 105, 161, 0.1)',
-                        fill: true,
-                        tension: 0.4,
-                        borderWidth: 4,
-                        pointBackgroundColor: '#0369a1',
-                        pointRadius: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: { y: { grid: { color: '#f5f5f4' } }, x: { grid: { display: false } } }
-                }
-            });
-        };
     </script>
 </body>
 </html>
