@@ -15,16 +15,17 @@
     <!-- Application Structure Plan: 
          1. Site Header: Global navigation (Home, Gas, Defence) for consistent portal UX.
          2. Strategic Hero: Framing the 'Strategy of Denial' and the NT's role as a hardened forward operating base.
-         3. Evolution of Strategic Investment (Illustration): Visual breakdown of funding frameworks (Pre-NDS, 2024 NDS, 2026 IIP) detailing allocations and timeframes.
-         4. Tabbed Deep Dive:
+         3. Evolution of Strategic Investment: Visual breakdown of funding frameworks (Pre-NDS, 2024 NDS, 2026 IIP) detailing allocations and timeframes.
+         4. Strategic Glossary: Immediate footer spelling out technical acronyms (NDS, IIP, ISR, etc.).
+         5. Tabbed Deep Dive:
             - 'Key Defence Assets': Strategic capabilities of the four primary regional bases.
             - 'Personnel': Data visualization of resident population decline vs. rotational and contractor growth.
     -->
     <!-- Visualization & Content Choices: 
-         - Investment Evolution (Goal: Compare): Multi-card layout replacing text sections to show the scale and timing of Commonwealth commitments.
-         - Base Capabilities (Goal: Inform): Interactive card grid detailing the strategic roles of Darwin, Tindal, Coonawarra, and Robertson.
-         - Personnel Shift (Goal: Change): Grouped bar chart with absolute person counts to visualize the 12.5% resident ADF drop.
-         - NO SVG/Mermaid. Icons are Unicode.
+         - Framework Roadmap (Goal: Organize/Compare): Triple-card layout mapping the transition of Commonwealth commitments.
+         - Base Capabilities (Goal: Inform): Interactive card grid detailing strategic roles (Strike, Intel, Maritime, Land).
+         - Personnel Shift (Goal: Change): Grouped bar chart with absolute person counts to visualize the demographic drop.
+         - NO SVG/Mermaid. Icons are Unicode or HTML/CSS.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
@@ -66,13 +67,13 @@
                 </div>
                 
                 <nav class="flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
-                    <a href="index.html" class="nav-link flex items-center gap-2">
+                    <a href="index.html" class="nav-link flex items-center gap-2 text-slate-300">
                         <span>🏠</span> Home
                     </a>
-                    <a href="gas.html" class="nav-link flex items-center gap-2">
+                    <a href="gas.html" class="nav-link flex items-center gap-2 text-slate-300">
                         <span>🔥</span> Gas
                     </a>
-                    <span class="nav-link active-nav flex items-center gap-2 text-emerald-400">
+                    <span class="nav-link active-nav flex items-center gap-2 text-emerald-400 font-black">
                         <span>🛡️</span> Defence
                     </span>
                 </nav>
@@ -84,7 +85,7 @@
 
         <!-- Hero Section: The Strategic Pivot -->
         <section class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mb-8">
-            <div class="bg-blue-900 text-white p-8">
+            <div class="bg-blue-900 text-white p-8 text-center md:text-left">
                 <h2 class="text-3xl font-bold mb-4">Strategic Pivot: Hardened Forward Operations</h2>
                 <p class="text-blue-100 leading-relaxed text-lg max-w-4xl">
                     The Commonwealth's adoption of the <span class="text-emerald-400 font-bold">Strategy of Denial</span> marks a fundamental shift in the Top End’s role. The Northern Territory is being transformed from a regional training ground into Australia’s primary hardened operating base, designed for high-end deterrence and power projection across the Indo-Pacific.
@@ -92,99 +93,110 @@
             </div>
         </section>
 
-        <!-- Illustration: Evolution of Strategic Investment -->
+        <!-- Section: Evolution of Strategic Investment (Illustration) -->
         <section class="mb-12">
             <div class="flex items-center gap-4 mb-8">
                 <h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Evolution of Strategic Investment</h3>
                 <div class="h-px bg-slate-200 flex-1"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Pre-NDS Block -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <!-- Framework 1 -->
                 <div class="framework-card bg-white p-6 rounded-xl shadow-sm border border-slate-200 border-t-slate-400">
                     <div class="mb-6">
-                        <span class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-bold rounded uppercase">Period: 2020 — 2023</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase">Pre-NDS (2020 FSP + 2023 DSR)</span>
                         <h4 class="text-xl font-bold text-slate-800 mt-2">Foundation Uplift</h4>
-                        <p class="text-xs text-slate-500 font-medium">Framework: 2020 FSP + 2023 DSR</p>
                     </div>
                     <div class="flex-1 space-y-6">
                         <div>
                             <div class="text-2xl font-black text-slate-700">$6.23B</div>
-                            <div class="text-[10px] text-slate-400 uppercase font-bold">Combined AUS+US Allocation</div>
+                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Combined AUS+US Allocation in NT</div>
                         </div>
                         <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-xs">📅</span>
-                                <span class="text-xs font-bold text-slate-600">Timeframe: +15 Years (to ~2028)</span>
-                            </div>
-                            <ul class="text-xs text-slate-600 space-y-2 ml-11">
-                                <li>• 25 active projects in pipeline</li>
-                                <li>• $2B NT share of northern uplift</li>
-                                <li>• Peak spend $1.3B in 2024–25</li>
+                            <div class="text-xs font-bold text-slate-600">Timeframe: +15 Years (to ~2028)</div>
+                            <ul class="text-xs text-slate-500 space-y-2">
+                                <li>• 25 active regional projects</li>
+                                <li>• $2B NT share of $3.8B northern uplift</li>
+                                <li>• Peak annual spend $1.3B in 2024–25</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2024 NDS Block -->
-                <div class="framework-card bg-white p-6 rounded-xl shadow-lg border-2 border-emerald-100 border-t-emerald-500 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-2">
-                        <span class="text-2xl opacity-20">⚡</span>
-                    </div>
+                <!-- Framework 2 -->
+                <div class="framework-card bg-white p-6 rounded-xl shadow-lg border-2 border-emerald-500 border-t-emerald-500 relative">
                     <div class="mb-6">
-                        <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded uppercase">Period: 2024 — 2034</span>
+                        <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded uppercase">2024 NDS / 2024 IIP</span>
                         <h4 class="text-xl font-bold text-emerald-950 mt-2">Northern Hardening</h4>
-                        <p class="text-xs text-emerald-600 font-medium">Framework: 2024 NDS / 2024 IIP</p>
                     </div>
                     <div class="flex-1 space-y-6">
                         <div>
                             <div class="text-2xl font-black text-emerald-700">$14B — $18B</div>
-                            <div class="text-[10px] text-emerald-600 uppercase font-bold">Specific Northern Base Focus</div>
+                            <div class="text-[10px] text-emerald-600 uppercase font-bold tracking-wider">Allocation for Northern Bases</div>
                         </div>
                         <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-xs">🎯</span>
-                                <span class="text-xs font-bold text-emerald-900">Timeframe: Decade to 2033–34</span>
-                            </div>
-                            <ul class="text-xs text-emerald-700 space-y-2 ml-11">
+                            <div class="text-xs font-bold text-emerald-900">Timeframe: Decade to 2033–34</div>
+                            <ul class="text-xs text-emerald-800 space-y-2">
                                 <li>• NT as <strong>Primary Beneficiary</strong></li>
                                 <li>• $750M first tranche fast-tracked</li>
-                                <li>• Northern bases a Top-11 priority</li>
+                                <li>• Northern bases a Top-11 Strategic Priority</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2026 NDS Block -->
+                <!-- Framework 3 -->
                 <div class="framework-card bg-white p-6 rounded-xl shadow-sm border border-slate-200 border-t-blue-600">
                     <div class="mb-6">
-                        <span class="px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded uppercase">Period: 2026 — 2036</span>
+                        <span class="px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded uppercase">2026 NDS / 2026 IIP</span>
                         <h4 class="text-xl font-bold text-blue-950 mt-2">Total Deterrence</h4>
-                        <p class="text-xs text-blue-600 font-medium">Framework: 2026 NDS / 2026 IIP</p>
                     </div>
                     <div class="flex-1 space-y-6">
                         <div>
                             <div class="text-2xl font-black text-blue-800">+$53B</div>
-                            <div class="text-[10px] text-blue-600 uppercase font-bold">National Decade Uplift</div>
+                            <div class="text-[10px] text-blue-600 uppercase font-bold tracking-wider">National Decade Spend Increase</div>
                         </div>
                         <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-xs">🌐</span>
-                                <span class="text-xs font-bold text-blue-900">Timeframe: Decade to 2035–36</span>
-                            </div>
-                            <ul class="text-xs text-slate-600 space-y-2 ml-11">
-                                <li>• <strong>41% Maritime Allocation</strong></li>
-                                <li>• NT-centric Missile & Fuel Security</li>
-                                <li>• Focus on Regional Persistence</li>
+                            <div class="text-xs font-bold text-blue-900">Timeframe: Decade to 2035–36</div>
+                            <ul class="text-xs text-slate-600 space-y-2">
+                                <li>• <strong>41% Maritime focus</strong> (Maritime North)</li>
+                                <li>• Guided missile & fuel security focus</li>
+                                <li>• Hardening of integrated air/missile defence</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Glossary -->
+            <div class="bg-white rounded-lg p-5 border border-slate-200 mb-8">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-[10px] uppercase font-bold text-slate-500 tracking-tighter">
+                    <div class="flex flex-col border-r border-slate-100 pr-2">
+                        <span class="text-slate-900">FSP</span>
+                        <span class="font-normal normal-case italic text-slate-400">Force Structure Plan</span>
+                    </div>
+                    <div class="flex flex-col border-r border-slate-100 pr-2">
+                        <span class="text-slate-900">DSR</span>
+                        <span class="font-normal normal-case italic text-slate-400">Defence Strategic Review</span>
+                    </div>
+                    <div class="flex flex-col border-r border-slate-100 pr-2">
+                        <span class="text-slate-900">NDS</span>
+                        <span class="font-normal normal-case italic text-slate-400">National Defence Strategy</span>
+                    </div>
+                    <div class="flex flex-col border-r border-slate-100 pr-2">
+                        <span class="text-slate-900">IIP</span>
+                        <span class="font-normal normal-case italic text-slate-400">Integrated Investment Program</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-slate-900">ISR</span>
+                        <span class="font-normal normal-case italic text-slate-400">Intel, Surveillance, Reconnaissance</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Navigation Tabs -->
-        <div class="flex border-b border-slate-300 mb-8 overflow-x-auto bg-slate-50/95 sticky top-0 z-10 py-2">
+        <div class="flex border-b border-slate-300 mb-8 overflow-x-auto bg-slate-50/95 sticky top-0 z-20 py-2">
             <button class="tab-btn active px-6 py-4 text-base text-slate-600 hover:text-blue-900 whitespace-nowrap focus:outline-none" onclick="openTab('tab-hubs', this)">
                 🏗️ Key Defence Assets
             </button>
@@ -223,7 +235,7 @@
                         <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">DARWIN</span>
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                        A critical tactical and ISR hub. Upgrades focus on aircraft aprons and support facilities for rotational US and Australian fighter detachments patrolling the northern approaches.
+                        A critical tactical and <strong>ISR</strong> hub. Upgrades focus on aircraft aprons and support facilities for rotational US and Australian fighter detachments patrolling northern approaches.
                     </p>
                     <div class="text-xs font-bold text-blue-800 uppercase flex items-center gap-2">
                         <span>📡</span> Strategic Role: Intel & Interception
@@ -305,7 +317,7 @@
 
     <footer class="bg-slate-900 text-slate-500 py-10 text-center text-xs mt-12 border-t border-slate-800">
         <p class="mb-2 tracking-widest uppercase font-bold text-slate-400 italic">"Deterrence through Resilience and Hardening"</p>
-        <p>&copy; 2026 Northern Territory Economy Analysis Hub.</p>
+        <p>&copy; 2026 Northern Territory Economy Analysis Hub. Based on Commonwealth NDS/IIP Frameworks.</p>
     </footer>
 
     <!-- App Logic -->
@@ -371,9 +383,6 @@
                 }
             });
         }
-
-        // Standard initialization for a clean SPA feel
-        window.onload = () => {};
     </script>
 </body>
 </html>
