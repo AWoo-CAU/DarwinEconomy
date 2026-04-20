@@ -31,13 +31,13 @@
     <style>
         /* <!-- Chosen Palette: Sophisticated Stone & Sky (Neutrals with Deep Blue/Orange) -->
         <!-- Application Structure Plan: 
-             1. Navigation: Persistent links to Home and Defence, plus section anchors for this page.
-             2. Executive Overview: Centered Hero section highlighting the transition between workforce periods.
-             3. Strategic Sequence Timeline: Visualizes the chronological handover from operational anchors to future growth hubs.
-             4. Key Gas Projects: Focused interactive view for major assets with updated narratives. -->
+             1. Navigation: Persistent links to Home and Defence.
+             2. Executive Overview: Centered Hero section focusing on the shift between construction and export phases.
+             3. Strategic Sequence Timeline: Updated subheading to reflect the handover from offshore to onshore and the Middle Arm value-capture strategy.
+             4. Key Gas Projects: Interactive profiles for INPEX, Barossa, and Beetaloo. -->
         /* <!-- Visualization & Content Choices: 
-             - Strategic Timeline -> CSS Connected Nodes -> Shows the sequential nature of projects.
-             - Asset Profiles -> Tabbed Interface -> Provides specific project narratives (No charts used). -->
+             - Strategic Timeline -> CSS Connected Nodes -> Sequential mapping of major infrastructure waves.
+             - Key Gas Projects -> Interactive Tabs -> Qualitative data on project phases and milestones. -->
         /* <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --> */
 
         body {
@@ -87,7 +87,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Center Justified) -->
+    <!-- Hero Section -->
     <section id="summary" class="pt-16 pb-12 md:pt-24 md:pb-20 px-4 bg-gradient-to-b from-stone-100 to-brand-light text-center border-b border-stone-200">
         <div class="max-w-5xl mx-auto">
             <div class="inline-block bg-brand-accent/10 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
@@ -107,46 +107,52 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-12 text-center md:text-left">
                 <h2 class="text-3xl font-bold mb-2 text-brand-dark">The Strategic Sequence</h2>
-                <p class="text-stone-500">Visualizing the shift from established export infrastructure to the next wave of developments.</p>
+                <p class="text-stone-600 text-lg max-w-4xl">
+                    Offshore gas has set the foundation as onshore development moves into construction phase. Darwin's Middle Arm precinct will ensure downstream value is retained in the Northern Territory.
+                </p>
             </div>
 
             <div class="relative py-10">
                 <div class="absolute top-1/2 left-0 w-full h-1 timeline-line -translate-y-1/2 hidden md:block"></div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                    <!-- Node 1: INPEX -->
                     <div class="relative flex flex-col items-center group">
                         <div class="mb-4 bg-stone-800 text-white w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg shadow-xl z-10 transition-transform group-hover:scale-110">1</div>
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">INPEX Ichthys</h4>
                             <span class="text-xs font-bold text-brand-accent bg-brand-accent/10 px-2 py-0.5 rounded">2018-Ongoing</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">Transitioned from construction phase to steady export delivering 10% of Japan's gas supply</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4 italic">Transitioned from construction phase to steady export delivering 10% of Japan's gas supply</p>
                         </div>
                     </div>
 
+                    <!-- Node 2: Barossa -->
                     <div class="relative flex flex-col items-center group">
                         <div class="mb-4 bg-brand-highlight text-white w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg shadow-xl z-10 transition-transform group-hover:scale-110">2</div>
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">Santos Barossa</h4>
                             <span class="text-xs font-bold text-brand-highlight bg-brand-highlight/10 px-2 py-0.5 rounded">2021-2026</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">Construction phase completing with first exports in early 2026</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4 italic">Construction phase completing with first exports in early 2026</p>
                         </div>
                     </div>
 
+                    <!-- Node 3: Beetaloo -->
                     <div class="relative flex flex-col items-center group">
                         <div class="mb-4 bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg shadow-xl z-10 transition-transform group-hover:scale-110">3</div>
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">Beetaloo Basin</h4>
                             <span class="text-xs font-bold text-brand-accent bg-brand-accent/10 px-2 py-0.5 rounded">2023-2030+</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">Large onshore shale gas basin moving to high construction-led developments</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4 italic">Large onshore shale gas basin moving to high construction-led developments</p>
                         </div>
                     </div>
 
+                    <!-- Node 4: Middle Arm -->
                     <div class="relative flex flex-col items-center group">
                         <div class="mb-4 bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg shadow-xl z-10 transition-transform group-hover:scale-110">4</div>
                         <div class="text-center">
                             <h4 class="font-black text-stone-900 uppercase tracking-tighter">Middle Arm</h4>
                             <span class="text-xs font-bold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded">2025-2030+</span>
-                            <p class="mt-2 text-xs text-stone-500 px-4">The ultimate value-capture precinct for manufacturing, minerals, and hydrogen.</p>
+                            <p class="mt-2 text-xs text-stone-500 px-4 italic">The ultimate value-capture precinct for manufacturing, minerals, and hydrogen.</p>
                         </div>
                     </div>
                 </div>
@@ -154,12 +160,12 @@
         </div>
     </section>
 
-    <!-- Key Gas Projects (Formerly Project Deep Dive) -->
+    <!-- Key Gas Projects -->
     <section id="assets" class="py-16 bg-stone-100 border-y border-stone-200">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-10 text-center md:text-left">
                 <h2 class="text-3xl font-bold mb-2 text-brand-dark">Key Gas Projects</h2>
-                <p class="text-stone-500">Explore the specific economic narratives and trajectories of the Territory's primary gas assets.</p>
+                <p class="text-stone-500">Interact with the Territory's primary gas assets to view their economic narratives and trajectories.</p>
             </div>
 
             <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
@@ -175,7 +181,7 @@
                         <div>
                             <h3 class="text-2xl font-bold mb-4">INPEX Ichthys: The Global Supplier</h3>
                             <p class="text-stone-600 mb-6 leading-relaxed">
-                                Having transitioned from a massive multi-year construction phase, INPEX is now in steady-state operation. It serves as the cornerstone of the NT's export economy, currently delivering approximately 10% of Japan's total gas supply.
+                                Having transitioned from a massive construction phase to steady exports, INPEX Ichthys now delivers 10% of Japan's total gas supply. It remains the baseline anchor for Northern Territory gas revenue.
                             </p>
                             <div class="flex items-center gap-4">
                                 <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 flex-1">
@@ -218,7 +224,7 @@
         const projectData = {
             inpex: {
                 title: "INPEX Ichthys: The Global Supplier",
-                desc: "Having transitioned from a massive multi-year construction phase, INPEX is now in steady-state operation. It serves as the cornerstone of the NT's export economy, currently delivering approximately 10% of Japan's total gas supply.",
+                desc: "Having transitioned from a massive construction phase to steady exports, INPEX Ichthys now delivers 10% of Japan's total gas supply. It remains the baseline anchor for Northern Territory gas revenue.",
                 status: "Steady Export",
                 milestone: "10% Japan Supply",
                 bullets: ["2012-2018: HISTORIC CONSTRUCTION ERA", "2018-PRESENT: OPERATIONAL OPTIMIZATION", "FUTURE: CARBON CAPTURE (CCS) ADOPTION"]
